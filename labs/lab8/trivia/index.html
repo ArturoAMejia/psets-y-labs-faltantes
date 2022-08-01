@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Trivia!</title>
+    <script>
+      // TODO: Add code to check answers to questions
+      document.addEventListener("DOMContentLoaded", () => {
+        let correctAnswer = document.querySelector("#correct");
+        let incorrectAnswer1 = document.querySelector("#incorrect1");
+        let incorrectAnswer2 = document.querySelector("#incorrect2");
+        let incorrectAnswer3 = document.querySelector("#incorrect3");
+        let message = document.querySelector("#message");
+
+        document.querySelector("#correct").onclick = () => {
+          correctAnswer.style.backgroundColor = "green";
+          incorrectAnswer1.style.backgroundColor = "#d9edff";
+          incorrectAnswer2.style.backgroundColor = "#d9edff";
+          incorrectAnswer3.style.backgroundColor = "#d9edff";
+          message.innerHTML = "Correct!";
+        };
+
+        document.querySelector("#incorrect1").onclick = () => {
+          correctAnswer.style.backgroundColor = "#d9edff";
+          incorrectAnswer1.style.backgroundColor = "red";
+          incorrectAnswer2.style.backgroundColor = "#d9edff";
+          incorrectAnswer3.style.backgroundColor = "#d9edff";
+          message.innerHTML = "Incorrect :((";
+        };
+
+        document.querySelector("#incorrect2").onclick = () => {
+          correctAnswer.style.backgroundColor = "#d9edff";
+          incorrectAnswer1.style.backgroundColor = "#d9edff";
+          incorrectAnswer2.style.backgroundColor = "red";
+          incorrectAnswer3.style.backgroundColor = "#d9edff";
+          message.innerHTML = "Incorrect :((";
+        };
+
+        document.querySelector("#incorrect3").onclick = () => {
+          correctAnswer.style.backgroundColor = "#d9edff";
+          incorrectAnswer1.style.backgroundColor = "#d9edff";
+          incorrectAnswer2.style.backgroundColor = "#d9edff";
+          incorrectAnswer3.style.backgroundColor = "red";
+          message.innerHTML = "Incorrect :((";
+        };
+
+        document.querySelector("#freeAnswer").onclick = () => {
+          let input = document.querySelector("#input").value;
+          let freeMessage = document.querySelector("#freeMessage");
+          if (input === "Facebook" || input === "facebook") {
+            freeMessage.innerHTML = "Correcto";
+          } else {
+            freeMessage.innerHTML = "Incorrecto";
+          }
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <hr />
+        <!-- TODO: Add multiple choice question here -->
+        <h3>¿Cual de estas tecnologías es para el frontend?</h3>
+        <button id="correct">React</button>
+        <button id="incorrect1">Flask</button>
+        <button id="incorrect2">Node</button>
+        <button id="incorrect3">Django</button>
+        <p id="message"></p>
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+        <!-- TODO: Add free response question here -->
+        <hr class="Resp-libre" />
+        <!-- TODO: Add free response question here -->
+        <h3>¿Quien creó React?</h3>
+        <input id="input" type="text" />
+        <button id="freeAnswer">Comprobar</button>
+        <p id="freeMessage"></p>
+      </div>
+    </div>
+  </body>
+</html>
